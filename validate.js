@@ -1,4 +1,5 @@
 var assert = require('assert');
+var https = require('node:https');
 
 // Validation functions
 function justLog(name, value, expected) {
@@ -63,7 +64,7 @@ function validate(account_id, api_key, query, checks) {
   };
 
   // Make POST request, passing in options and callback
-  $http.post(options, callback);
+  $https.post(options, callback);
 }
 
 module.exports = { validate, justLog, eq, regex };
